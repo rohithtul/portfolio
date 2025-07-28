@@ -57,6 +57,8 @@
         nav a:hover { color: var(--primary-color); }
         main { padding-top: 80px; }
         section { padding: 60px 0; }
+        
+        /* --- THIS IS THE KEY SECTION FOR THE LAYOUT --- */
         .hero {
             display: flex;
             align-items: center;
@@ -64,6 +66,7 @@
             min-height: 80vh;
             gap: 2rem;
         }
+        
         .hero-text h1 { font-size: 3.5rem; font-weight: 700; margin: 0 0 1rem 0; line-height: 1.2; }
         .hero-text h1 .dynamic-text { color: var(--primary-color); }
         .hero-text p { font-size: 1.1rem; max-width: 500px; color: var(--muted-text-color); margin-bottom: 2rem;}
@@ -98,21 +101,26 @@
             transition: transform 0.3s;
         }
         .glass-card:hover { transform: translateY(-5px); }
-        .grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        .experience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1.5rem; }
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .grid-item h3 { color: var(--primary-color); margin: 0 0 0.25rem 0; }
-        .grid-item h4 { margin: 0; font-size: 1.1rem; }
-        .grid-item ul { padding-left: 20px; margin-top: 0.5rem; color: var(--muted-text-color); font-size: 0.9rem; }
+        
+        .experience-card h4 { margin: 0; font-size: 1.1rem; }
+        .experience-card h3 { color: var(--primary-color); margin: 0 0 0.25rem 0; }
+        .experience-card ul { padding-left: 20px; margin-top: 0.5rem; color: var(--muted-text-color); font-size: 0.9rem; }
         .date { font-size: 0.8rem; color: var(--muted-text-color); margin-bottom: 1rem; }
-        .project-language { font-size: 0.8rem; font-weight: 600; color: var(--primary-color); margin-top: 1rem; }
+        
+        .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+        .skill-tag { background: var(--card-background); border: 1px solid var(--card-border); padding: 10px 20px; border-radius: 8px; font-weight: 600; }
+        
         #contact { text-align: center; }
         footer { text-align: center; padding: 2rem 0; margin-top: 4rem; border-top: 1px solid var(--card-border); }
         .social-links a { margin: 0 10px; }
         .social-links svg { fill: var(--muted-text-color); width: 24px; height: 24px; transition: all 0.3s; }
         .social-links a:hover svg { fill: var(--primary-color); transform: scale(1.1); }
+        
+        /* I HAVE REMOVED THE RESPONSIVE CODE THAT STACKS THE HERO SECTION. */
+        /* The nav bar will still hide its links on mobile for cleanliness. */
         @media (max-width: 900px) {
-            .hero { flex-direction: column-reverse; text-align: center; }
-            .hero-text { margin-top: 2rem; }
             nav ul { display: none; }
         }
     </style>
@@ -126,6 +134,7 @@
             <div class="logo">SRT</div>
             <ul>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -146,8 +155,8 @@
         
         <section id="experience" class="container">
             <h2 class="section-title">Experience</h2>
-            <div class="grid">
-                <div class="glass-card grid-item">
+            <div class="experience-grid">
+                <div class="glass-card experience-card">
                     <h4>Data Engineer</h4>
                     <h3>Ven Solutions, Irving, Texas</h3>
                     <p class="date">August 2024 – Present</p>
@@ -157,33 +166,53 @@
                         <li>Utilized Parquet and Avro formats, cutting storage costs by 15%.</li>
                     </ul>
                 </div>
-                 <div class="glass-card grid-item">
+                 <div class="glass-card experience-card">
                     <h4>Big Data Engineer</h4>
                     <h3>Optum Global Solutions, Hyderabad, India</h3>
                     <p class="date">June 2021 – July 2022</p>
                     <ul>
                         <li>Migrated 50+ ETL jobs from Talend to Apache Airflow, reducing licensing costs by 30%.</li>
                         <li>Processed over 10 GB of patient data daily using Python and Spark.</li>
-                        <li>Optimized Spark jobs using HBase for metadata management, reducing processing time by 25%.</li>
+                        <li>Optimized Spark jobs using HBase for metadata management.</li>
                     </ul>
                 </div>
-                 <div class="glass-card grid-item">
+                 <div class="glass-card experience-card">
                     <h4>Data Engineer</h4>
                     <h3>ADP Private Limited, Hyderabad, India</h3>
                     <p class="date">November 2017 – June 2021</p>
                     <ul>
-                        <li>Developed SQL and SQR scripts for Oracle databases, automating updates for over 500 client reports.</li>
+                        <li>Developed SQL and SQR scripts for Oracle databases, automating updates for 500+ client reports.</li>
                         <li>Resolved 100+ critical production issues with data validation scripts.</li>
                         <li>Automated data extraction tasks with Python, reducing manual effort by 25%.</li>
                     </ul>
                 </div>
             </div>
         </section>
+        
+        <section id="skills" class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Scala</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Apache Spark</span>
+                <span class="skill-tag">Hadoop</span>
+                <span class="skill-tag">Hive</span>
+                <span class="skill-tag">Snowflake</span>
+                <span class="skill-tag">ETL Pipelines</span>
+                <span class="skill-tag">Data Modeling</span>
+                <span class="skill-tag">Jenkins</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">CI/CD</span>
+                <span class="skill-tag">Airflow</span>
+            </div>
+        </section>
 
         <section id="projects" class="container">
             <h2 class="section-title">Recent Projects from GitHub</h2>
             <div id="projects-grid" class="projects-grid">
-                <p>Loading projects from GitHub...</p>
+                <p style="text-align:center; width:100%;">Loading projects from GitHub...</p>
             </div>
         </section>
 
@@ -258,9 +287,9 @@
                         const projectCard = document.createElement('div');
                         projectCard.className = 'glass-card';
                         projectCard.innerHTML = `
-                            <h3>${repo.name}</h3>
+                            <h3 style="color: var(--primary-color); margin: 0 0 0.5rem 0;">${repo.name}</h3>
                             <p style="color:var(--muted-text-color); font-size: 0.9rem;">${repo.description || 'No description available.'}</p>
-                            <p class="project-language">Language: ${repo.language || 'N/A'}</p>
+                            <p style="font-size: 0.8rem; font-weight: 600; color: var(--primary-color); margin-top: 1rem;">Language: ${repo.language || 'N/A'}</p>
                             <a href="${repo.html_url}" target="_blank" style="font-weight:600; font-size:0.9rem; color:var(--primary-color); text-decoration:none;">View on GitHub &rarr;</a>
                         `;
                         projectsGrid.appendChild(projectCard);
