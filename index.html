@@ -56,26 +56,36 @@
         nav a { text-decoration: none; color: var(--muted-text-color); font-weight: 600; transition: color 0.3s; }
         nav a:hover { color: var(--primary-color); }
         main { padding-top: 80px; }
-        section { padding: 60px 0; }
+        section { padding: 40px 0; }
 
-        /* The .hero rule is now simpler */
-        .hero {
-            min-height: 80vh;
+        #profile {
+            display: flex;
+            justify-content: center;
+            padding-top: 60px;
+            padding-bottom: 20px;
+        }
+        #intro {
+            text-align: center;
+            padding-top: 20px;
         }
         
-        .hero-text h1 { font-size: 3.5rem; font-weight: 700; margin: 0 0 1rem 0; line-height: 1.2; }
-        .hero-text h1 .dynamic-text { color: var(--primary-color); }
-        .hero-text p { font-size: 1.1rem; max-width: 500px; color: var(--muted-text-color); margin-bottom: 2rem;}
+        .intro-text h1 { 
+            font-size: 3.5rem; 
+            font-weight: 700; 
+            margin: 0 0 1rem 0; 
+            line-height: 1.2; 
+        }
+        .intro-text h1 .dynamic-text { color: var(--primary-color); }
+        .intro-text p { font-size: 1.1rem; max-width: 600px; color: var(--muted-text-color); margin: 0 auto 2rem auto;}
         
-        /* --- IMAGE CONTAINER SIZE REDUCED AS REQUESTED --- */
         .profile-pic-container {
-            width: 280px;  /* DECREASED from 300px */
-            height: 280px; /* DECREASED from 300px */
+            max-width: 250px; 
+            width: 100%;      
+            aspect-ratio: 1 / 1; 
             border-radius: 50%;
             border: 5px solid var(--primary-color);
             overflow: hidden;
             box-shadow: 0 0 30px var(--primary-color);
-            flex-shrink: 0;
         }
         
         .profile-pic-container img { width: 100%; height: 100%; object-fit: cover; }
@@ -102,15 +112,12 @@
         .glass-card:hover { transform: translateY(-5px); }
         .experience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1.5rem; }
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        
         .experience-card h4 { margin: 0; font-size: 1.1rem; }
         .experience-card h3 { color: var(--primary-color); margin: 0 0 0.25rem 0; }
         .experience-card ul { padding-left: 20px; margin-top: 0.5rem; color: var(--muted-text-color); font-size: 0.9rem; }
         .date { font-size: 0.8rem; color: var(--muted-text-color); margin-bottom: 1rem; }
-        
         .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
         .skill-tag { background: var(--card-background); border: 1px solid var(--card-border); padding: 10px 20px; border-radius: 8px; font-weight: 600; }
-        
         #contact { text-align: center; }
         footer { text-align: center; padding: 2rem 0; margin-top: 4rem; border-top: 1px solid var(--card-border); }
         .social-links a { margin: 0 10px; }
@@ -118,7 +125,9 @@
         .social-links a:hover svg { fill: var(--primary-color); transform: scale(1.1); }
         
         @media (max-width: 900px) {
-            nav ul { display: none; }
+            nav ul { 
+                display: none;
+            }
         }
     </style>
 </head>
@@ -139,14 +148,17 @@
     </header>
 
     <main>
-        <section id="hero" class="container hero" style="display: flex; align-items: center; justify-content: space-between;">
-            <div class="hero-text">
+        <section id="profile" class="container">
+            <div class="profile-pic-container">
+                <img src="profile.jpg" alt="Sai Rohith Tulasi">
+            </div>
+        </section>
+
+        <section id="intro" class="container">
+            <div class="intro-text">
                 <h1>I'm Sai Rohith Tulasi <br/>A <span id="dynamic-text" class="dynamic-text"></span></h1>
                 <p>Data Engineer with 5+ years of experience in designing, building, and optimizing large-scale, distributed systems. Skilled in creating scalable and fault-tolerant data pipelines using Python, Scala, SQL, and Apache Spark.</p>
-                <a href="Rohtih_Infosys_DE.pdf" class="cta-button" target="_blank">Download Resume</a>
-            </div>
-            <div class="profile-pic-container">
-                <img id="profile-pic" src="profile.jpg" alt="Sai Rohith Tulasi">
+                <a href="Resume.pdf" class="cta-button" target="_blank">Download Resume</a>
             </div>
         </section>
         
@@ -160,6 +172,7 @@
                     <ul>
                         <li>Designed and implemented scalable data pipelines using Apache Spark and Scala, processing over 1TB of data daily for real-time analytics and reporting.</li>
                         <li>Optimized Spark SQL queries, reducing query execution time by 25% and improving overall data processing efficiency.</li>
+                        <li>Collaborated with teams to integrate Snowflake with AWS S3 for seamless data ingestion, enhancing data availability for analytics and reporting.</li>
                         <li>Utilized Parquet and Avro formats for efficient data storage and retrieval, reducing storage costs by 15%.</li>
                     </ul>
                 </div>
@@ -169,8 +182,9 @@
                     <p class="date">June 2021 – July 2022</p>
                     <ul>
                         <li>Migrated 50+ ETL jobs from Talend to Apache Airflow, cutting licensing costs by 30% and enhancing job scheduling efficiency.</li>
-                        <li>Processed 10+ GB of patient data daily using Python and Spark.</li>
+                        <li>Processed 10+ GB of patient data daily using Python and Spark, transforming raw data into structured formats for analysis.</li>
                         <li>Utilized HBase for metadata management and optimized Spark jobs, achieving a 25% reduction in processing time.</li>
+                        <li>Collaborated with DevOps teams to implement CI/CD pipelines, ensuring smooth deployment of data solutions.</li>
                     </ul>
                 </div>
                  <div class="glass-card experience-card">
@@ -179,8 +193,8 @@
                     <p class="date">November 2017 – June 2021</p>
                     <ul>
                         <li>Developed and maintained SQL and SQR scripts for Oracle databases, automating data updates and processing 500+ client-specific reports.</li>
-                        <li>Resolved 100+ critical production issues related to data mismatches.</li>
-                        <li>Automated data extraction tasks with Python, reducing manual effort by 25%.</li>
+                        <li>Implemented data validation scripts to resolve 100+ critical production issues related to data mismatches.</li>
+                        <li>Utilized Python for automating repetitive tasks and improving data extraction processes, reducing manual effort by 25%.</li>
                     </ul>
                 </div>
             </div>
@@ -242,7 +256,6 @@
                 "interactivity": {"detect_on": "canvas","events": {"onhover": {"enable": true,"mode": "grab"},"onclick": {"enable": true,"mode": "push"},"resize": true},"modes": {"grab": {"distance": 140,"line_linked": {"opacity": 0.2}},"push": {"particles_nb": 4}}},
                 "retina_detect": true
             });
-
             const dynamicText = document.getElementById('dynamic-text');
             const phrases = ["Data Engineer.", "Cloud Enthusiast.", "Problem Solver."];
             let phraseIndex = 0, letterIndex = 0, currentPhrase = "", isDeleting = false;
@@ -269,7 +282,6 @@
                 setTimeout(type, typeSpeed);
             }
             type();
-
             const githubUsername = 'rohithtul';
             const projectsGrid = document.getElementById('projects-grid');
             fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=6`)
