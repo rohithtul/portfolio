@@ -136,11 +136,11 @@
         <section id="hero" class="container">
             <div class="hero-text">
                 <h1>I'm Sai Rohith Tulasi <br/>A <span id="dynamic-text" class="dynamic-text"></span></h1>
-                [cite_start]<p>Data Engineer with 5+ years of experience in designing, building, and optimizing large-scale, distributed systems. [cite: 5] [cite_start]Skilled in creating scalable data pipelines using Python, Scala, SQL, and Apache Spark. [cite: 6]</p>
+                <p>Data Engineer with 5+ years of experience in designing, building, and optimizing large-scale, distributed systems. Skilled in creating scalable data pipelines using Python, Scala, SQL, and Apache Spark.</p>
                 <a href="Resume.pdf" class="cta-button" target="_blank">Download Resume</a>
             </div>
             <div class="profile-pic-container">
-                <img id="profile-pic" src="" alt="Sai Rohith Tulasi">
+                <img id="profile-pic" src="profile.jpg" alt="Sai Rohith Tulasi">
             </div>
         </section>
         
@@ -150,31 +150,31 @@
                 <div class="glass-card grid-item">
                     <h4>Data Engineer</h4>
                     <h3>Ven Solutions, Irving, Texas</h3>
-                    [cite_start]<p class="date">August 2024 – Present [cite: 12]</p>
+                    <p class="date">August 2024 – Present</p>
                     <ul>
-                        [cite_start]<li>Designed scalable data pipelines using Apache Spark and Scala, processing over 1TB of data daily. [cite: 13]</li>
-                        [cite_start]<li>Optimized Spark SQL queries, reducing execution time by 25%. [cite: 14]</li>
-                        [cite_start]<li>Utilized Parquet and Avro formats, cutting storage costs by 15%. [cite: 17]</li>
+                        <li>Designed scalable data pipelines using Apache Spark and Scala, processing over 1TB of data daily.</li>
+                        <li>Optimized Spark SQL queries, reducing execution time by 25%.</li>
+                        <li>Utilized Parquet and Avro formats, cutting storage costs by 15%.</li>
                     </ul>
                 </div>
                  <div class="glass-card grid-item">
                     <h4>Big Data Engineer</h4>
                     <h3>Optum Global Solutions, Hyderabad, India</h3>
-                    [cite_start]<p class="date">June 2021 – July 2022 [cite: 20]</p>
+                    <p class="date">June 2021 – July 2022</p>
                     <ul>
-                        [cite_start]<li>Migrated 50+ ETL jobs from Talend to Apache Airflow, reducing licensing costs by 30%. [cite: 21]</li>
-                        [cite_start]<li>Processed over 10 GB of patient data daily using Python and Spark. [cite: 22]</li>
-                        [cite_start]<li>Optimized Spark jobs using HBase for metadata management, reducing processing time by 25%. [cite: 24]</li>
+                        <li>Migrated 50+ ETL jobs from Talend to Apache Airflow, reducing licensing costs by 30%.</li>
+                        <li>Processed over 10 GB of patient data daily using Python and Spark.</li>
+                        <li>Optimized Spark jobs using HBase for metadata management, reducing processing time by 25%.</li>
                     </ul>
                 </div>
                  <div class="glass-card grid-item">
                     <h4>Data Engineer</h4>
                     <h3>ADP Private Limited, Hyderabad, India</h3>
-                    [cite_start]<p class="date">November 2017 – June 2021 [cite: 28]</p>
+                    <p class="date">November 2017 – June 2021</p>
                     <ul>
-                        [cite_start]<li>Developed SQL and SQR scripts for Oracle databases, automating updates for over 500 client reports. [cite: 29]</li>
-                        [cite_start]<li>Resolved 100+ critical production issues with data validation scripts. [cite: 31]</li>
-                        [cite_start]<li>Automated data extraction tasks with Python, reducing manual effort by 25%. [cite: 32]</li>
+                        <li>Developed SQL and SQR scripts for Oracle databases, automating updates for over 500 client reports.</li>
+                        <li>Resolved 100+ critical production issues with data validation scripts.</li>
+                        <li>Automated data extraction tasks with Python, reducing manual effort by 25%.</li>
                     </ul>
                 </div>
             </div>
@@ -244,10 +244,6 @@
             }
             type();
 
-            // Correctly formatted Imgur URL for direct image access
-            const profilePicUrl = 'https://i.imgur.com/83wWp3S.png';
-            document.getElementById('profile-pic').src = profilePicUrl;
-            
             const githubUsername = 'rohithtul';
             const projectsGrid = document.getElementById('projects-grid');
             fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=6`)
