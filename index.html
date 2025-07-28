@@ -57,28 +57,27 @@
         nav a:hover { color: var(--primary-color); }
         main { padding-top: 80px; }
         section { padding: 60px 0; }
-        
-        /* --- THIS IS THE KEY SECTION FOR THE LAYOUT --- */
+
+        /* The .hero rule is now simpler */
         .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             min-height: 80vh;
-            gap: 2rem;
         }
         
         .hero-text h1 { font-size: 3.5rem; font-weight: 700; margin: 0 0 1rem 0; line-height: 1.2; }
         .hero-text h1 .dynamic-text { color: var(--primary-color); }
         .hero-text p { font-size: 1.1rem; max-width: 500px; color: var(--muted-text-color); margin-bottom: 2rem;}
+        
+        /* --- IMAGE CONTAINER SIZE REDUCED AS REQUESTED --- */
         .profile-pic-container {
-            width: 300px;
-            height: 300px;
+            width: 280px;  /* DECREASED from 300px */
+            height: 280px; /* DECREASED from 300px */
             border-radius: 50%;
             border: 5px solid var(--primary-color);
             overflow: hidden;
             box-shadow: 0 0 30px var(--primary-color);
             flex-shrink: 0;
         }
+        
         .profile-pic-container img { width: 100%; height: 100%; object-fit: cover; }
         .cta-button {
             display: inline-block;
@@ -118,8 +117,6 @@
         .social-links svg { fill: var(--muted-text-color); width: 24px; height: 24px; transition: all 0.3s; }
         .social-links a:hover svg { fill: var(--primary-color); transform: scale(1.1); }
         
-        /* I HAVE REMOVED THE RESPONSIVE CODE THAT STACKS THE HERO SECTION. */
-        /* The nav bar will still hide its links on mobile for cleanliness. */
         @media (max-width: 900px) {
             nav ul { display: none; }
         }
@@ -142,11 +139,11 @@
     </header>
 
     <main>
-        <section id="hero" class="container">
+        <section id="hero" class="container hero" style="display: flex; align-items: center; justify-content: space-between;">
             <div class="hero-text">
                 <h1>I'm Sai Rohith Tulasi <br/>A <span id="dynamic-text" class="dynamic-text"></span></h1>
-                <p>Data Engineer with 5+ years of experience in designing, building, and optimizing large-scale, distributed systems. Skilled in creating scalable data pipelines using Python, Scala, SQL, and Apache Spark.</p>
-                <a href="Resume.pdf" class="cta-button" target="_blank">Download Resume</a>
+                <p>Data Engineer with 5+ years of experience in designing, building, and optimizing large-scale, distributed systems. Skilled in creating scalable and fault-tolerant data pipelines using Python, Scala, SQL, and Apache Spark.</p>
+                <a href="Rohtih_Infosys_DE.pdf" class="cta-button" target="_blank">Download Resume</a>
             </div>
             <div class="profile-pic-container">
                 <img id="profile-pic" src="profile.jpg" alt="Sai Rohith Tulasi">
@@ -161,9 +158,9 @@
                     <h3>Ven Solutions, Irving, Texas</h3>
                     <p class="date">August 2024 – Present</p>
                     <ul>
-                        <li>Designed scalable data pipelines using Apache Spark and Scala, processing over 1TB of data daily.</li>
-                        <li>Optimized Spark SQL queries, reducing execution time by 25%.</li>
-                        <li>Utilized Parquet and Avro formats, cutting storage costs by 15%.</li>
+                        <li>Designed and implemented scalable data pipelines using Apache Spark and Scala, processing over 1TB of data daily for real-time analytics and reporting.</li>
+                        <li>Optimized Spark SQL queries, reducing query execution time by 25% and improving overall data processing efficiency.</li>
+                        <li>Utilized Parquet and Avro formats for efficient data storage and retrieval, reducing storage costs by 15%.</li>
                     </ul>
                 </div>
                  <div class="glass-card experience-card">
@@ -171,9 +168,9 @@
                     <h3>Optum Global Solutions, Hyderabad, India</h3>
                     <p class="date">June 2021 – July 2022</p>
                     <ul>
-                        <li>Migrated 50+ ETL jobs from Talend to Apache Airflow, reducing licensing costs by 30%.</li>
-                        <li>Processed over 10 GB of patient data daily using Python and Spark.</li>
-                        <li>Optimized Spark jobs using HBase for metadata management.</li>
+                        <li>Migrated 50+ ETL jobs from Talend to Apache Airflow, cutting licensing costs by 30% and enhancing job scheduling efficiency.</li>
+                        <li>Processed 10+ GB of patient data daily using Python and Spark.</li>
+                        <li>Utilized HBase for metadata management and optimized Spark jobs, achieving a 25% reduction in processing time.</li>
                     </ul>
                 </div>
                  <div class="glass-card experience-card">
@@ -181,8 +178,8 @@
                     <h3>ADP Private Limited, Hyderabad, India</h3>
                     <p class="date">November 2017 – June 2021</p>
                     <ul>
-                        <li>Developed SQL and SQR scripts for Oracle databases, automating updates for 500+ client reports.</li>
-                        <li>Resolved 100+ critical production issues with data validation scripts.</li>
+                        <li>Developed and maintained SQL and SQR scripts for Oracle databases, automating data updates and processing 500+ client-specific reports.</li>
+                        <li>Resolved 100+ critical production issues related to data mismatches.</li>
                         <li>Automated data extraction tasks with Python, reducing manual effort by 25%.</li>
                     </ul>
                 </div>
